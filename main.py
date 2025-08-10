@@ -19,7 +19,7 @@ class MyBot(commands.Bot):
         intents = nextcord.Intents.default()
         intents.members = True
         intents.message_content = True
-        super().__init__(command_prefix=None, intents=intents, application_id=int(os.getenv("APP_ID")))
+        super().__init__(command_prefix=!, intents=intents, application_id=int(os.getenv("APP_ID")))
         # Adding cogs
         cogs = []
         for root, dirs, files in os.walk("cogs"):
@@ -119,3 +119,4 @@ async def on_app_command_error(
         raise error
 
 bot.run(os.getenv("BOT_TOKEN"))
+
